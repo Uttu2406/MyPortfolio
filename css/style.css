@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 
 :root {
 
     --bg-black-900: #f2f2f2;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
-
-    --skin-color: #ec1839;
-
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 }
@@ -39,14 +38,61 @@ ul {
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-    position: fixed;
-    left: 270px;
+    /* position: fixed;
+    left: 270px; */
+    padding: 0 30px;
+    /* right: 0;
     top: 0;
-    height: 100%;
-    right: 0;
-    z-index: 0;
+    z-index: 0; */
     opacity: 1;
 }
+
+/* .hidden { 
+    display: none !important;
+} */
+
+.main-content {
+    padding-left: 270px;
+}
+
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 35px;
+    color: white;
+    border-radius: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: var(--skin-color);
+    transition:  all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ==== Side Navbar (Aside) ==== */
 
 .aside {
     width: 270px;
@@ -81,8 +127,8 @@ ul {
 }
 
 .aside .logo a span {
-    font-family: 'Clicker Script';
-    font-size: 40px;
+    font-family: 'Rubik Iso';
+    font-size: 36px;
 }
 
 .aside .logo a::before {
@@ -111,18 +157,19 @@ ul {
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);
-    cursor: pointer; 
+    cursor: pointer;
     position: fixed;
     left: 300px;
     top: 20px;
     border-radius: 5px;
     background: var(--bg-black-100);
-    display: none; /* Makes hamburger disappear */
+    display: none;
+    /* Makes hamburger disappear */
     align-items: center;
     justify-content: center;
 }
 
-.aside .nav-toggler span{
+.aside .nav-toggler span {
     height: 2px;
     width: 18px;
     background: var(--skin-color);
@@ -151,7 +198,7 @@ ul {
 }
 
 .aside .nav {
-    margin-top: 50 px;
+    margin-top: 50px;
 }
 
 .aside .nav li {
@@ -174,4 +221,83 @@ ul {
 
 .aside .nav li a i {
     margin-right: 15px;
+}
+
+/* ==== Home Section ==== */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900);
+}
+
+.home .home-info {
+    flex: 0 0 60%;
+    max-width: 60;
+}
+
+h3.hello {
+    font-size: 28;
+    margin: 15px 0;
+}
+
+h3.hello span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+h3.my-profession {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing {
+    color: var(--skin-color);
+}
+
+.home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    /* background: gray; */
+
+}
+
+.home-img::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    /* background: red; */
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: 0px;
+    top: -40px;    
+}
+
+.home-img::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    /* background: red; */
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    right: 0px;
+    bottom: -40px;
+}
+
+.home .home-img img {
+    margin: auto;
+    border-radius: 5px;
+    height: 400px;
 }
