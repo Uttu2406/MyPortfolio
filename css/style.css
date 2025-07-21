@@ -24,6 +24,10 @@ body {
     box-sizing: border-box;
 }
 
+p {
+    text-align: justify;
+}
+
 ::before,
 ::after {
     box-sizing: border-box;
@@ -87,7 +91,7 @@ ul {
     content: '';
     height: 4px;
     width: 50px;
-    background-color: var(--skin-color);
+    background-color: var(--temp-color);
     position: absolute;
     top: 100%;
     left: 0;
@@ -97,7 +101,7 @@ ul {
     content: '';
     height: 4px;
     width: 25px;
-    background-color: var(--skin-color);
+    background-color: var(--temp-color);
     position: absolute;
     top: 100%;
     left: 0;
@@ -121,7 +125,7 @@ ul {
     display: inline-block;
     white-space: nowrap;
     border: none;
-    background: var(--skin-color);
+    background: var(--temp-color);
     transition:  all 0.3s ease;
 }
 
@@ -158,7 +162,7 @@ ul {
 }
 
 .aside .logo a {
-    color: var(--skin-color);
+    color: var(--temp-color);
     font-weight: 700;
     background: none;
     padding: 15px 20px;
@@ -177,8 +181,8 @@ ul {
     position: absolute;
     width: 20px;
     height: 20px;
-    border-bottom: 5px solid var(--skin-color);
-    border-left: 5px solid var(--skin-color);
+    border-bottom: 5px solid var(--temp-color);
+    border-left: 5px solid var(--temp-color);
     bottom: 0;
     left: 0;
 }
@@ -188,8 +192,8 @@ ul {
     position: absolute;
     width: 20px;
     height: 20px;
-    border-top: 5px solid var(--skin-color);
-    border-right: 5px solid var(--skin-color);
+    border-top: 5px solid var(--temp-color);
+    border-right: 5px solid var(--temp-color);
     top: 0;
     right: 0;
 }
@@ -213,7 +217,7 @@ ul {
 .aside .nav-toggler span {
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--temp-color);
     display: inline-block;
     position: relative;
 }
@@ -222,7 +226,7 @@ ul {
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--temp-color);
     position: absolute;
     top: -6px;
     left: 0;
@@ -232,7 +236,7 @@ ul {
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--temp-color);
     position: absolute;
     top: 6px;
     left: 0;
@@ -257,7 +261,7 @@ ul {
 }
 
 .aside .nav li a.active {
-    color: var(--skin-color);
+    color: var(--temp-color);
 }
 
 .aside .nav li a i {
@@ -286,7 +290,7 @@ h3.hello span {
     font-family: 'Clicker Script', cursive;
     font-size: 30px;
     font-weight: 700;
-    color: var(--skin-color);
+    color: var(--temp-color);
 }
 
 h3.my-profession {
@@ -295,7 +299,7 @@ h3.my-profession {
 }
 
 .typing {
-    color: var(--skin-color);
+    color: var(--temp-color);
 }
 
 .home-info p {
@@ -313,14 +317,13 @@ h3.my-profession {
 
 }
 
-.home-img::before {
+/* .home-img::before {
     content: '';
     position: absolute;
     height: 80px;
     width: 80px;
-    /* background: red; */
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
+    border-top: 10px solid var(--temp-color);
+    border-left: 10px solid var(--temp-color);
     left: 0px;
     top: -40px;    
 }
@@ -330,12 +333,11 @@ h3.my-profession {
     position: absolute;
     height: 80px;
     width: 80px;
-    /* background: red; */
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
+    border-bottom: 10px solid var(--temp-color);
+    border-right: 10px solid var(--temp-color);
     right: 0px;
     bottom: -40px;
-}
+} */
 
 .home .home-img img {
     margin: auto;
@@ -362,8 +364,8 @@ h3.my-profession {
     color: var(--text-black-900);
 }
 
-.about .about-content .about-text .h3 .span {
-    color: var(--skin-color);
+.about .about-content .about-text h3 span {
+    color: var(--temp-color);
 }
 
 .about .about-content .about-text .p {
@@ -373,15 +375,15 @@ h3.my-profession {
 }
 
 .about .about-content .personal-info {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 60%;
+    max-width: 60%;
     /* background-color: red; */
     margin-top: 40px;
 }
 
 .about .about-content .personal-info .info-item {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 70%;
     /* background-color: red; */
 }
 
@@ -410,8 +412,8 @@ h3.my-profession {
 }
 
 .about .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
     /* background-color: green; */
     margin-top: 40px;
 }
@@ -449,7 +451,7 @@ h3.my-profession {
     top: 0;
     height: 100%;
     border-radius: 4px;
-    background-color: var(--skin-color);
+    background-color: var(--temp-color);
 }
 
 .about .about-content .skills .skills-item .skill-percent {
@@ -509,7 +511,7 @@ h3.my-profession {
     height: 100%;
     left: 7px;
     top: 0;
-    background-color: var(--skin-color);
+    background-color: var(--temp-color);
 }
 
 .about .about-content .timeline .circle-dot {
@@ -519,7 +521,7 @@ h3.my-profession {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: var(--skin-color);
+    background-color: var(--temp-color);
 }
 
 .about .about-content .timeline .timeline-date {
@@ -548,4 +550,68 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+/* ==== Service ==== */
 
+.service .container {
+    padding-bottom: 40px;
+}
+
+.service .service-item {
+    margin-bottom: 30px;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.service .service-item .service-item-inner {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.service .service-item .service-item-inner .icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner .icon .fa {
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--temp-color);
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon {
+    background-color: var(--temp-color);
+}
+
+.service .service-item .service-item-inner:hover .icon .fa {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.service .service-item .service-item-inner h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.service .service-item .service-item-inner p {
+    font-size: 16px;
+    color: var(--text-black-700);
+    line-height: 25px;
+    text-align: center;
+}
