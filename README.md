@@ -20,6 +20,6 @@ This is my personal developer portfolio built using **HTML**, **CSS**, and **Jav
 
 ## 🚀 Live Preview
 
-[🔗 Visit My Portfolio](https://github.com/Uttu2406/MyPortfolio) 
+[🔗 Visit My Portfolio](https://utkrishtbhandari.com.np/) 
 
 
