@@ -45,41 +45,24 @@ ul {
     list-style: none;
 }
 
+/* ==== Main Layout ==== */
+
+.main-container {
+    display: flex;
+}
+
+/* ==== Main Content: normal scroll flow ==== */
+
+.main-content {
+    margin-left: 270px;
+    flex: 1;
+    background: var(--bg-black-900);
+}
+
 .section {
     background: var(--bg-black-900);
-    min-height: 100vh;
-    display: block;
     padding: 0 30px;
-    opacity: 1;
-    position: fixed;
-    left: 270px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: all 0.3s ease;
-}
-
-.section.back-section {
-    z-index: 1;
-}
-
-.section.active {
-    z-index: 2;
-    opacity: 1;
-    animation: slideSection 1s ease;
-}
-
-@keyframes slideSection {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
+    min-height: 100vh;
 }
 
 .hidden {
@@ -238,7 +221,6 @@ ul {
     border-radius: 5px;
     background: var(--bg-black-100);
     display: none;
-    /* Makes hamburger disappear */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -317,16 +299,17 @@ ul {
 .home {
     min-height: 100vh;
     display: flex;
+    align-items: center;
     color: var(--text-black-900);
 }
 
 .home .home-info {
     flex: 0 0 60%;
-    max-width: 60;
+    max-width: 60%;
 }
 
 h3.hello {
-    font-size: 28;
+    font-size: 28px;
     margin: 15px 0;
 }
 
@@ -357,31 +340,7 @@ h3.my-profession {
     max-width: 40%;
     text-align: center;
     position: relative;
-    /* background: gray; */
-
 }
-
-/* .home-img::before {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid var(--temp-color);
-    border-left: 10px solid var(--temp-color);
-    left: 0px;
-    top: -40px;    
-}
-
-.home-img::after {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-bottom: 10px solid var(--temp-color);
-    border-right: 10px solid var(--temp-color);
-    right: 0px;
-    bottom: -40px;
-} */
 
 .home .home-img img {
     margin: auto;
@@ -402,34 +361,19 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.about .about-content .about-text .h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: var(--text-black-900);
-}
-
 .about .about-content .about-text h3 span {
     color: var(--temp-color);
-}
-
-.about .about-content .about-text .p {
-    font-size: 16px;
-    line-height: 25px;
-    color: var(--text-black-700);
 }
 
 .about .about-content .personal-info {
     flex: 0 0 60%;
     max-width: 60%;
-    /* background-color: red; */
     margin-top: 40px;
 }
 
 .about .about-content .personal-info .info-item {
     flex: 0 0 100%;
     max-width: 70%;
-    /* background-color: red; */
 }
 
 .about .about-content .personal-info .info-item p {
@@ -458,15 +402,12 @@ h3.my-profession {
 .about .about-content .skills {
     flex: 0 0 30%;
     max-width: 30%;
-    /* background-color: green; */
     margin-top: 40px;
 }
 
 .about .about-content .skills .skills-item {
     flex: 0 0 100%;
     max-width: 100%;
-    /* background-color: red; */
-    /* margin-bottom: 30px; */
 }
 
 .about .about-content .skills .skills-item h5 {
@@ -508,12 +449,10 @@ h3.my-profession {
 }
 
 .about .about-content .education,
-
 .about .about-content .experience {
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 30px;
-    /* background-color: red; */
 }
 
 .about .about-content h3.title {
@@ -526,7 +465,6 @@ h3.my-profession {
 .about .about-content .timeline-box {
     flex: 0 0 100%;
     max-width: 100%;
-    /* background-color:  red; */
 }
 
 .about .about-content .timeline {
@@ -771,7 +709,7 @@ h3.my-profession {
     padding: 10px 25px;
     font-size: 16px;
     color: var(--text-black-700);
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 .contact .contact-form .form-item .form-control:focus {
@@ -787,7 +725,9 @@ h3.my-profession {
     padding: 0 50px;
 }
 
-@media (max-width:1199px) {
+/* ==== Responsive ==== */
+
+@media (max-width: 1199px) {
     .section .container {
         padding-top: 70px;
     }
@@ -809,21 +749,21 @@ h3.my-profession {
         left: 300px;
     }
 
-    .section {
-        left: 0;
+    .main-content {
+        margin-left: 0;
     }
 
-    .section.open {
-        left: 270px;
+    .main-content.open {
+        margin-left: 270px;
     }
 
-    .about .about-content .personal-info ,.info-item p span {
+    .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
     }
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
     .home .home-info {
         flex: 0 0 100%;
         max-width: 100%;
@@ -840,8 +780,7 @@ h3.my-profession {
     }
 }
 
-@media (max-width:720px) {
-
+@media (max-width: 720px) {
     .service .service-item,
     .portfolio .portfolio-item,
     .contact .contact-info-item,
@@ -854,5 +793,3 @@ h3.my-profession {
         max-width: 100%;
     }
 }
-
-

@@ -3,86 +3,66 @@
 var typed = new Typed(".typing", {
     strings: ["Web Developer", "Web Designer", "Graphic Designer", "Software Developer", "CS Graduate"],
     typeSpeed: 100,
-    BackSpeed: 60,
+    backSpeed: 60,
     loop: true
-})
+});
 
-/* ==== Aside ==== */
+/* ==== Smooth Scroll for Nav Links ==== */
 
-const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
-    totalNavList = navList.length,
-    allSection = document.querySelectorAll(".section"),
-    totalSection = allSection.length;
+const navLinks = document.querySelectorAll(".nav a");
 
-for (let i = 0; i < totalNavList; i++) {
-    const a = navList[i].querySelector("a");
+navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").split("#")[1];
+        const targetSection = document.getElementById(targetId);
 
-    a.addEventListener("click", function () {
-        removeBackSection();
-        for (let j = 0; j < totalNavList; j++) {
-            if (navList[j].querySelector("a").classList.contains("active")) {
-                addBackSection(j);
-                // allSection[j].classList.add("back-section");
-            }
-            navList[j].querySelector("a").classList.remove("active");
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
         }
 
-        this.classList.add("active")
-        showSection(this);
+        // Close aside on mobile after clicking
         if (window.innerWidth < 1200) {
             asideSectionTogglerBtn();
         }
-    })
-}
+    });
+});
 
-function showSection(element) {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("active");
-    }
-    const target = element.getAttribute("href").split("#")[1];
-    document.querySelector("#" + target).classList.add("active")
-}
+/* ==== Highlight Active Nav Link on Scroll ==== */
 
-function removeBackSection() {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("back-section");
-    }
-}
+const sections = document.querySelectorAll(".section");
 
-function addBackSection(num){
-    allSection[num].classList.add("back-section");
-}
+const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.4
+};
 
-function updateNav(element) {
-    for (let i = 0; i < totalNavList; i++) {
-        navList[i].querySelector("a").classList.remove("active");
-        const target = element.getAttribute("href").split("#")[1];
-        if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
-            navList[i].querySelector("a").classList.add("active");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                    link.classList.add("active");
+                }
+            });
         }
-    }
-}
+    });
+}, observerOptions);
 
-document.querySelector(".hire-me").addEventListener("click", function () {
-    const sectionIndex = this.getAttribute("data-section-index");
-    // console.log(sectionIndex);
-    showSection(this);
-    updateNav(this);
-    removeBackSection();
-    addBackSection(section);
-})
+sections.forEach(section => observer.observe(section));
+
+/* ==== Mobile Nav Toggler ==== */
 
 const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
+
 navTogglerBtn.addEventListener("click", () => {
     asideSectionTogglerBtn();
-})
+});
 
 function asideSectionTogglerBtn() {
     aside.classList.toggle("open");
     navTogglerBtn.classList.toggle("open");
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
-    }
 }
